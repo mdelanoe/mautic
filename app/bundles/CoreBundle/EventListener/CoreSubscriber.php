@@ -135,7 +135,7 @@ class CoreSubscriber extends CommonSubscriber
         }
 
         //set a couple variables used by Ckeditor's filemanager
-        $session->set('mautic.docroot', $event->getRequest()->server->get('DOCUMENT_ROOT'));
+        $session->set('mautic.docroot', $this->factory->getParameter('paths')['root']);
         $session->set('mautic.basepath', $event->getRequest()->getBasePath());
         $session->set('mautic.imagepath', $this->factory->getParameter('image_path'));
     }
